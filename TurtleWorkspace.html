@@ -1,0 +1,117 @@
+<!DOCTYPE html> <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Turtle Workspace</title>
+    <style>
+        canvas {border: 1px dotted #564b47;}
+    </style>
+</head>
+<body>
+<h1>Turtle Workspace</h1>
+<canvas id="turtlecanvas" width="300" height="300"></canvas>
+<canvas id="imagecanvas" width="300" height="300" style="display:none"></canvas>
+<script src="turtle.js"></script>
+
+
+<script>
+    // hier die eigenen Funktionen und Variablen defnieren
+    // sowie Anweisungen an die Turtle schreiben
+
+    function names (x,y) {
+        reset();
+            x = prompt("Wie heisst du zum Vornamen?");
+        y = prompt ("Wie heisst du zum Nachnamen?");
+        console.log (x + " " + y);
+    }
+
+
+    function adder () {
+    reset ();
+        let a = prompt ("Gib mir die erste Zahl!");
+        let b = prompt ("Gib mir die zweite Zahl!");
+        let c = parseInt(a) + parseInt (b);
+        console.log (c);
+    }
+
+    function temperature () {
+        reset ();
+        let f = prompt ("Ich rechne Celsius für dich. Gib mir die Grad in Fahrenheit an.");
+        let c = parseInt ((f-32)*5/9);
+        alert ("Temperatur in Grad Celsius:" + c);
+    }
+
+    function cross () {
+        reset ();
+        let x = random (-150, +150);
+        let y = random (-150, +150);
+        goto (x,y);
+        let size = 10;
+        pendown();
+        angle (45)
+        forward (size);
+        goto (x,y);
+        pendown();
+        angle (-45)
+        forward (size);
+        goto (x,y);
+        pendown();
+        angle (135)
+        forward (size);
+        goto (x,y);
+        pendown();
+        angle (-135)
+        forward (size);
+        goto (x,y);
+        }
+
+    function numbers () {
+        reset ();
+        let i = 5;
+        while (i !== 1, i--);
+        alert ("Countdown" + i);
+    }
+
+    function max () {
+        let i = 0;
+        while (i < 10) {
+            let zs = random (1, 100);
+            alert ("Zufallszahl" + zs);
+            i = i + 1;
+        }
+    }
+
+    function star () {
+        goto (0,0);
+        let i = 0;
+        let radius = 100;
+        while (i < 30) {
+            pendown ();
+            forward (radius);
+            goto (0,0);
+            right (12);
+            i = i + 1;
+        }
+    }
+
+    function star2 (x,y) {
+        goto (x,y);
+        let i = 0;
+        let radius = 100;
+        while (i < 30) {
+            pendown ();
+            forward (radius);
+            goto (x,y);
+            right (12);
+            i = i + 1;
+        }
+    }
+
+    function flowers () {
+    }
+
+</script>
+
+<footer><small>Code from https://rawgit.com/wrschneider99/js-turtle/master/turtle.html</small></footer>
+
+</body>
+</html>
